@@ -49,6 +49,12 @@ check3 = tk.Checkbutton(win, text="Enabled", variable=chVarEn)
 check3.select()
 check3.grid(column=2, row=4, sticky=tk.W)
 
+# Using a scroll text control
+scrolW = 30
+scrolH = 3
+scr = scrolledtext.ScrolledText(win, width=scrolW, height=scrolH, wrap=tk.WORD)
+scr.grid(column=0, columnspan=3)
+
 # Radiobutton Globals
 colors = ["Blue", "Gold", "Red"]
 
@@ -76,9 +82,9 @@ labelsFrame = ttk.LabelFrame(win, text=" Labels in a Frame ")
 labelsFrame.grid(column=0, row=7, padx=20, pady=40)
 
 # Place labels in the container element
-ttk.Label(labelsFrame, text="Label1").grid(column=0, row=0, sticky=tk.W)
-ttk.Label(labelsFrame, text="Label2").grid(column=0, row=1, sticky=tk.W)
-ttk.Label(labelsFrame, text="Label3").grid(column=0, row=2, sticky=tk.W)
+ttk.Label(labelsFrame, text="Label1").grid(column=0, row=0)
+ttk.Label(labelsFrame, text="Label2").grid(column=0, row=1)
+ttk.Label(labelsFrame, text="Label3").grid(column=0, row=2)
 
 for child in labelsFrame.winfo_children():
     child.grid_configure(padx=8, pady=4)
